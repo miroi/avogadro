@@ -1,0 +1,19 @@
+language: cpp
+sudo: required
+dist: trusty
+compiler:
+- g++
+install:
+  - sudo apt-get install cmake libqt4-dev openbabel libeigen3-dev -y
+script:
+  - mkdir $PWD/build
+  - cd build
+  - cmake ..
+  - make -j4
+  # run only in alphanumerical mode
+  #- $PWD/build/bin/wxmacmolplt --help
+  #- $PWD/build/bin/wxmacmolplt --version
+
+# turn off email notifications
+notifications:
+  email: false

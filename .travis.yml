@@ -5,7 +5,7 @@ compiler:
 - g++
 install:
   # basic packages necessary to build avogadro
-  - sudo apt-get install cmake libqt4-dev libopenbabel4 openbabel libeigen3-dev -y
+  - sudo apt-get install cmake libqt4-dev libopenbabel4 libeigen3-dev -y
 script:
   - mkdir $PWD/build
   - cd $PWD/build

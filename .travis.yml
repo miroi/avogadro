@@ -1,15 +1,21 @@
 language: cpp
-sudo: required
-dist: trusty
+
 compiler:
 - g++
+
+before_install:
+ - sudo apt-get update -qq
+
 install:
   # basic packages necessary to build avogadro
   - sudo apt-get install cmake libqt4-dev libopenbabel4 libeigen3-dev -y
-script:
-  - mkdir $PWD/build
-  - cd $PWD/build
+
+before_script:
+ - mkdir build
+ - cd build
   - cmake ..
+
+script:
   - make -j4
   - ls -lt
   # run only in alphanumerical mode

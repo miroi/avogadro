@@ -1,16 +1,28 @@
 language: cpp
+sudo: true
 
-compiler:
-- g++
+matrix:
+  include:
 
-before_install:
- - sudo apt-get install software-properties-common -y
- - echo | sudo add-apt-repository ppa:george-edison55/cmake-3.x
- - sudo apt-get update -qq
+    - os: linux
+      compiler: gcc
+      env: SOURCES=ubuntu-toolchain-r-test
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+             # compilers
+            - g++
+            - cmake
+            - libqt4-dev
+            - libopenbabel4
+            - libeigen3-dev
 
 install:
-  # basic packages necessary to build avogadro
-  - sudo apt-get install cmake libqt4-dev libopenbabel4 libeigen3-dev -y
+  - virtualenv venv
+  - source venv/bin/activate
+  - pip install pep8 pytest
 
 before_script:
   - mkdir build

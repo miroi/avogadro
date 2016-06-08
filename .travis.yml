@@ -11,16 +11,13 @@ install:
   - sudo apt-get install cmake libqt4-dev libopenbabel4 libeigen3-dev -y
 
 before_script:
- - mkdir build
- - cd build
+  - mkdir build
+  - cd build
   - cmake ..
 
 script:
   - make -j4
   - ls -lt
-  # run only in alphanumerical mode
-  #- $PWD/build/bin/wxmacmolplt --help
-  #- $PWD/build/bin/wxmacmolplt --version
 
 # turn off email notifications
 notifications:

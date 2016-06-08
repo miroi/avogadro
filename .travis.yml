@@ -25,6 +25,7 @@ install:
   - export PATH=$PWD/cmake-3.5.2-Linux-x86_64/bin:$PATH
   - export LD_LIBARY_PATH=$PWD//cmake-3.5.2-Linux-x86_64/lib:$LD_LIBRARY_PATH
   # get the newest openbabel (packages are old !)
+  - export GIT_SSL_NO_VERIFY=true
   - git clone git@github.com:openbabel/openbabel.git
   - cd $PWD/openbabel
   - mkdir build

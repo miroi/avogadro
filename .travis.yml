@@ -17,6 +17,7 @@ matrix:
             #- cmake
             - libqt4-dev
             - libeigen3-dev
+            - libwxgtk3.0-dev
 
 install:
   - pip install --user virtualenv
@@ -47,10 +48,11 @@ before_script:
   - mkdir build
   - cd build
   - cmake ..
-
-script:
   - make -j4
   - ls -lt
+
+script:
+  - uname -a
 
 # turn off email notifications
 notifications:

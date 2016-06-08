@@ -4,12 +4,14 @@ dist: trusty
 compiler:
 - g++
 install:
+  # basic packages necessary to build avogadro
   - sudo apt-get install cmake libqt4-dev openbabel libeigen3-dev -y
 script:
   - mkdir $PWD/build
-  - cd build
+  - cd $PWD/build
   - cmake ..
   - make -j4
+  - ls -lt
   # run only in alphanumerical mode
   #- $PWD/build/bin/wxmacmolplt --help
   #- $PWD/build/bin/wxmacmolplt --version

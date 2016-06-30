@@ -14,7 +14,7 @@ matrix:
           packages:
              # compilers
             - g++
-            #- cmake
+            - cmake
             - libqt4-dev
             - libeigen3-dev
             - libwxgtk3.0-dev
@@ -23,8 +23,8 @@ install:
   - pip install --user virtualenv
   # get newest cmake
   - curl https://cmake.org/files/v3.5/cmake-3.5.2-Linux-x86_64.tar.gz | tar xvz
-  - export PATH=$PWD/cmake-3.5.2-Linux-x86_64/bin:$PATH
-  - export LD_LIBARY_PATH=$PWD/cmake-3.5.2-Linux-x86_64/lib:$LD_LIBRARY_PATH
+#  - export PATH=$PWD/cmake-3.5.2-Linux-x86_64/bin:$PATH
+#  - export LD_LIBARY_PATH=$PWD/cmake-3.5.2-Linux-x86_64/lib:$LD_LIBRARY_PATH
   # get the newest openbabel (packages are old !)
   - export GIT_SSL_NO_VERIFY=true
   #- git clone git@github.com:openbabel/openbabel.git $PWD/openbabel
@@ -34,6 +34,7 @@ install:
   - ls -lt
   - mkdir build
   - cd build
+  - cmake --version
   - cmake ..
   - make -j4
   - ls -lt bin/

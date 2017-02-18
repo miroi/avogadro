@@ -14,8 +14,11 @@ matrix:
           packages:
              # compilers
             - g++
-            #- cmake
+            - cmake
             - libqt4-dev
+            - qt4-dev-tools
+            - pyqt4-dev-tools
+            - libqt4-opengl-dev
             - libeigen3-dev
             - libwxgtk3.0-dev
 
@@ -34,6 +37,7 @@ install:
   - ls -lt
   - mkdir build
   - cd build
+  - cmake --version
   - cmake ..
   - make -j4
   - ls -lt bin/

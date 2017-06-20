@@ -5,13 +5,16 @@ set(PLUGIN_LABEL extensions)
 set(PLUGIN_TARGET extensions)
 
 set(yaehmopextension_SRCS
+  specialkpoints.cpp
   yaehmopbanddialog.cpp
   yaehmopextension.cpp
+  yaehmoptotaldosdialog.cpp
   yaehmopout.cpp
 )
 
 set(yaehmopextension_UIS
   yaehmopbanddialog.ui
+  yaehmoptotaldosdialog.ui
 )
 
 avogadro_plugin_nogl(yaehmopextension
@@ -70,4 +73,4 @@ if(NOT ${USE_SYSTEM_YAEHMOP} AND
                       GROUP_READ GROUP_EXECUTE
                       WORLD_READ WORLD_EXECUTE)
 
-endif(NOT EXISTS ${CMAKE_BINARY_DIR}/bin/${YAEHMOP_NAME})
+endif()

@@ -28,7 +28,7 @@ install:
   - curl https://cmake.org/files/v3.5/cmake-3.5.2-Linux-x86_64.tar.gz | tar xvz
   - export PATH=$PWD/cmake-3.5.2-Linux-x86_64/bin:$PATH
   - export LD_LIBARY_PATH=$PWD/cmake-3.5.2-Linux-x86_64/lib:$LD_LIBRARY_PATH
-  # get the newest openbabel (packages are old !)
+  # get the newest openbabel manually (preinstalled packages are old !)
   - export GIT_SSL_NO_VERIFY=true
   #- git clone git@github.com:openbabel/openbabel.git $PWD/openbabel
   - git clone https://github.com/miroi/openbabel.git $PWD/openbabel

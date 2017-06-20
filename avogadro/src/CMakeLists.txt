@@ -36,6 +36,7 @@ if(GLEW_FOUND)
   include_directories(${GLEW_INCLUDE_DIR})
 endif()
 
+FIND_PACKAGE(Qt4 COMPONENTS QtSvg) # this defines the QT_USE_FILE variable
 include(${QT_USE_FILE})
 
 option(QtTesting "Enable Qt Testing framework?" OFF)

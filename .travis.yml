@@ -21,6 +21,7 @@ matrix:
             - libqt4-opengl-dev
             - libeigen3-dev
             - libwxgtk3.0-dev
+            - libboost-python-dev
 
 install:
   - pip install --user virtualenv

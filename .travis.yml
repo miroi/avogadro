@@ -22,7 +22,7 @@ matrix:
             - libeigen3-dev
             - libwxgtk3.0-dev
             - libboost-python-dev
-            - pyqt5-dev
+            - python-sip-dev
 
 install:
   - pip install --user virtualenv

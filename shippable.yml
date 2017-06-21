@@ -1,0 +1,50 @@
+## Simple buildup configuration file for the Shippable-CI service (https://app.shippable.com)
+##
+## see: http://docs.shippable.com/en/latest/samples/index.html
+## see: https://github.com/sympy/csympy/blob/b5b126d6465e6f6293edffb0342258b3fb8a30d3/.travis.yml
+##
+## This script can be also adapted for travis-ci
+##
+
+# include branches to test (master branch only)
+branches:
+    only:
+        - travis
+
+# language settings - prepare Python environment
+language: python
+
+# install/upgrade needed software
+install:
+# install the newest versions
+    - sudo apt-get update
+    - sudo apt-get autoclean
+    - sudo apt-get clean
+    - sudo apt-get install gcc g++ gfortran make cmake 
+    - sudo apt-get install libqt4-dev qt4-dev-tools pyqt4-dev-tools 
+    - sudo apt-get install libqt4-opengl-dev libeigen3-dev libwxgtk3.0-dev
+    - sudo apt-get install openbabel libopenbabel-dev
+
+# system info
+before_script:
+# show info about available processors
+    - lscpu
+    - echo nproc=$(nproc)
+# show available disc space
+    - df -h
+# show available memory
+    - free -m
+    
+# configure, build optimized code and run 
+script:
+    - mkdir build
+    - cd build ; pwd
+    - cmake ..
+    - make -j4
+    - ls -lt
+# run test (should end with 0)
+#    - bin/example
+
+# turn off email notifications
+notifications:
+    email: false

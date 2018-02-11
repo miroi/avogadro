@@ -15,6 +15,9 @@ matrix:
              # compilers
             - g++
             - cmake
+            - qt4-default
+            - qt4-qmake
+            - qt4-qtconfig
             - libqt4-dev
             - qt4-dev-tools
             - pyqt4-dev-tools

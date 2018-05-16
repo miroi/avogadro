@@ -490,11 +490,11 @@ mark_as_advanced(CMAKE_LIBRARY_OUTPUT_DIRECTORY
 
 # tell cmake to process CMakeLists.txt in that subdirectory
 add_subdirectory(libavogadro)
-include(libavogadro/CMakeLists.txt)
+#include(libavogadro/CMakeLists.txt)
 add_subdirectory(avogadro)
-include(avogadro/CMakeLists.txt)
+#include(avogadro/CMakeLists.txt)
 add_subdirectory(doc)
-include(doc/CMakeLists.txt)
+#include(doc/CMakeLists.txt)
 
 # Linux/Windows default: ${PREFIX}/share/avogadro/fragments
 set(avogadro_FRAGMENTS ${SHARE_INSTALL_PREFIX}/avogadro)

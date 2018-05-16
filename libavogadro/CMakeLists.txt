@@ -108,7 +108,7 @@ endfunction()
 
 # tell cmake to process CMakeLists.txt in that subdirectory
 add_subdirectory(src)
-include(src/CMakeLists.txt)
+#include(src/CMakeLists.txt)
 
 if(ENABLE_TESTS)
   add_subdirectory(tests)

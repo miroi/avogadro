@@ -8,4 +8,4 @@ endif()
 
 # tell cmake to process CMakeLists.txt in that subdirectory
 add_subdirectory(src)
-include(src/CMakeLists.txt)
+#include(src/CMakeLists.txt)

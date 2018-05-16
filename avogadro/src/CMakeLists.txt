@@ -202,6 +202,10 @@ if(APPLE)
   endforeach()
 endif()
 
+# miro: try fix install TARGETS given no RUNTIME DESTINATION for executable target
+message("BIN_INSTALL_DIR= ${BIN_INSTALL_DIR}")
+message("Avogadro_INSTALL_DESTINATIONS_ARGS=${Avogadro_INSTALL_DESTINATIONS_ARGS} ")
+
 install(TARGETS avogadro-app RUNTIME DESTINATION ${BIN_INSTALL_DIR}
   ${Avogadro_INSTALL_DESTINATIONS_ARGS})
 

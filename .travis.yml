@@ -35,6 +35,10 @@ install:
 before_script:
   - pwd
   - uname -a
+  - lscpu
+  - df -h
+  - free -m -g
+  - cmake --version
   - let "N_PROC=$(cat /proc/cpuinfo | grep processor | wc -l)"
   - echo "Number of processors/jobs for the serial build step is $N_PROC"
 

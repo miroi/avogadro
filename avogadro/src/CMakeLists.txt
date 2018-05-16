@@ -3,6 +3,11 @@ cmake_minimum_required(VERSION 2.8.9)
 set(QT_USE_QTOPENGL true)
 set(QT_USE_QTNETWORK true)
 
+#miro: QT4 stuff
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+find_package(Qt4)
+
 if(WIN32)
   set(QT_USE_QTMAIN true)
 endif()

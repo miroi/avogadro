@@ -8,6 +8,11 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 find_package(Qt4)
 
+#miro
+set(BIN_INSTALL_DIR      "bin"
+    CACHE STRING "Install dir for binaries")
+
+
 if(WIN32)
   set(QT_USE_QTMAIN true)
 endif()

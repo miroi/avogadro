@@ -1,36 +1,6 @@
 language: cpp
-sudo: true
-
-matrix:
-  include:
-
-    - os: linux
-      compiler: gcc
-      env: SOURCES=ubuntu-toolchain-r-test
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++
-            - cmake
-            - openbabel
-            - libopenbabel-dev
-            - python-openbabel
-            - qt4-default
-            - qt4-qmake
-            - qt4-qtconfig
-            - libqt4-dev
-            - qt4-dev-tools
-            - pyqt4-dev-tools
-            - libqt4-opengl-dev
-            - libeigen3-dev
-            - libwxgtk3.0-dev
-
-install:
-  - pip install --user virtualenv
-  - virtualenv venv
-  - source venv/bin/activate
+dist: trusty
+sudo: false
 
 before_script:
   - pwd

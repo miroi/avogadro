@@ -5,6 +5,12 @@ if(WIN32)
   set(QT_USE_QTMAIN true)
 endif()
 
+#miro - fix for travis-ci
+find_package(Qt4)
+set(BIN_INSTALL_DIR      "bin"
+    CACHE STRING "Install dir for binaries")
+
+
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
   ${CMAKE_CURRENT_BINARY_DIR}/config.h

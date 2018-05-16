@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 2.8.9)
+
 set(QT_USE_QTOPENGL true)
 set(QT_USE_QTNETWORK true)
 
@@ -36,7 +38,10 @@ if(GLEW_FOUND)
   include_directories(${GLEW_INCLUDE_DIR})
 endif()
 
-include(${QT_USE_FILE})
+# provide if-check
+if (QT4_FOUND)
+  include(${QT_USE_FILE})
+endif()
 
 option(QtTesting "Enable Qt Testing framework?" OFF)
 if(QtTesting)

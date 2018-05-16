@@ -34,16 +34,18 @@ install:
 
 before_script:
   - pwd
+  - uname -a
+  - let "N_PROC=$(cat /proc/cpuinfo | grep processor | wc -l)"
+  - echo "Number of processors/jobs for the serial build step is $N_PROC"
+
+script:
   - cd avogadro
   - ls -lt
   - mkdir build
   - cd build
   - cmake ..
-  - make -j4
+  - make -j $N_PROC
   - ls -lt
-
-script:
-  - uname -a
 
 # turn off email notifications
 notifications:

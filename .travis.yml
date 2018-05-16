@@ -16,7 +16,6 @@ matrix:
             - cmake
             - openbabel
             - libopenbabel-dev
-            - libopenbabel4v5
             - python-openbabel
             - qt4-default
             - qt4-qmake

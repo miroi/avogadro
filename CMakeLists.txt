@@ -494,6 +494,7 @@ include(libavogadro/CMakeLists.txt)
 add_subdirectory(avogadro)
 include(avogadro/CMakeLists.txt)
 add_subdirectory(doc)
+include(doc/CMakeLists.txt)
 
 # Linux/Windows default: ${PREFIX}/share/avogadro/fragments
 set(avogadro_FRAGMENTS ${SHARE_INSTALL_PREFIX}/avogadro)

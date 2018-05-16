@@ -1,17 +1,5 @@
-cmake_minimum_required(VERSION 2.8.9)
-
 set(QT_USE_QTOPENGL true)
 set(QT_USE_QTNETWORK true)
-
-#miro: QT4 stuff
-#set(CMAKE_AUTOMOC ON)
-#set(CMAKE_INCLUDE_CURRENT_DIR ON)
-find_package(Qt4)
-
-#miro
-set(BIN_INSTALL_DIR      "bin"
-    CACHE STRING "Install dir for binaries")
-
 
 if(WIN32)
   set(QT_USE_QTMAIN true)
@@ -48,10 +36,7 @@ if(GLEW_FOUND)
   include_directories(${GLEW_INCLUDE_DIR})
 endif()
 
-# provide if-check
-if (QT4_FOUND)
-  include(${QT_USE_FILE})
-endif()
+include(${QT_USE_FILE})
 
 option(QtTesting "Enable Qt Testing framework?" OFF)
 if(QtTesting)
@@ -206,10 +191,6 @@ if(APPLE)
       OUTPUT_QUIET)")
   endforeach()
 endif()
-
-# miro: try fix install TARGETS given no RUNTIME DESTINATION for executable target
-message("BIN_INSTALL_DIR= ${BIN_INSTALL_DIR}")
-message("Avogadro_INSTALL_DESTINATIONS_ARGS=${Avogadro_INSTALL_DESTINATIONS_ARGS} ")
 
 install(TARGETS avogadro-app RUNTIME DESTINATION ${BIN_INSTALL_DIR}
   ${Avogadro_INSTALL_DESTINATIONS_ARGS})

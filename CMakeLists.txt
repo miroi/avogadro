@@ -223,9 +223,6 @@ endif()
 
 set(I18N_LANGUAGE "" CACHE STRING "Build i18n only for selected language")
 
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
 find_package(Qt4 4.6.0 REQUIRED) # find and setup Qt4 for this project
 find_package(OpenGL REQUIRED) # find and setup OpenGL
 find_package(X11) # find and setup X11 (not required for Mac and Windows)

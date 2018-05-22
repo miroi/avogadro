@@ -3,7 +3,8 @@ dist: trusty
 sudo: false
 
 install:
-  - sudo apt-get install qtchooser
+   - sudo apt-get install qtchooser # is already installed
+   - sudo apt-get install qttools5-dev-tools
 
 before_script:
   - pwd
@@ -18,6 +19,7 @@ before_script:
   - qmake --version
   - lupdate-qt4 -version
   - lrelease-qt4 -version
+  - which lconvert
   - lconvert -h 
 
 script:

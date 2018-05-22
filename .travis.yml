@@ -3,8 +3,9 @@ dist: trusty
 sudo: false
 
 install:
-   - sudo apt-get install qtchooser # is already installed
-   - sudo apt-get install qttools5-dev-tools
+   #- sudo apt-get install qtchooser # is already installed
+   #- sudo apt-get install qttools5-dev-tools
+   - sudo apt-get install qt4-linguist-tools
 
 before_script:
   - pwd

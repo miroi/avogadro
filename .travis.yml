@@ -6,6 +6,7 @@ install:
    #- sudo apt-get install qtchooser # is already installed
    #- sudo apt-get install qttools5-dev-tools
    - sudo apt-get install qt4-linguist-tools
+   - sudo apt install qttools5-dev-tools
 
 before_script:
   - pwd

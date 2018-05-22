@@ -20,7 +20,7 @@ before_script:
   - lupdate-qt4 -version
   - lrelease-qt4 -version
   - which lconvert
-  - lconvert -h 
+  - /usr/bin/lconvert -h
 
 script:
   - cd avogadro

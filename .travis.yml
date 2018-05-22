@@ -2,6 +2,9 @@ language: cpp
 dist: trusty
 sudo: false
 
+install:
+  - sudo apt-get install qtchooser
+
 before_script:
   - pwd
   - uname -a
@@ -11,7 +14,7 @@ before_script:
   - cmake --version
   - let "N_PROC=$(cat /proc/cpuinfo | grep processor | wc -l)"
   - echo "Number of processors/jobs for the serial build step is $N_PROC"
-  # verify Qt4 and stuff installed
+  # verify Qt4 and related stuff is installed
   - qmake --version
   - lupdate-qt4 -version
   - lrelease-qt4 -version

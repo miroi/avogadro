@@ -11,8 +11,11 @@ before_script:
   - cmake --version
   - let "N_PROC=$(cat /proc/cpuinfo | grep processor | wc -l)"
   - echo "Number of processors/jobs for the serial build step is $N_PROC"
-  # verify Qt4 installed
+  # verify Qt4 and stuff installed
   - qmake --version
+  - lupdate-qt4 -version
+  - lrelease-qt4 -version
+  - lconvert -h 
 
 script:
   - cd avogadro
@@ -21,7 +24,7 @@ script:
   - mkdir build
   - cd build
   - cmake ..
-  - make -j $N_PROC
+  - make -j $N_PROC VERBOSE=1
   - ls -lt
 
 # turn off email notifications
